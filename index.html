@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Items in List</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+        }
+        .container{
+            text-align: center;
+            min-height: 200px;
+            min-width: 600px;
+            border: 2px solid gray;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .container:hover{
+            box-shadow: 5px 5px 20px aqua;
+            border: 2px solid aqua;
+        }
+        h2{
+            color: rgb(2, 108, 108);
+        }
+        input{
+            height: 30px;
+            border-radius: 10px;
+            min-width: 250px;
+        }
+        button{
+            font-size: 21px;
+            padding: 7px 20px;
+            border-radius: 10px;
+            margin-left: 20px;
+            cursor: pointer;
+            box-shadow: 2px 2px 5px black;
+            }
+
+        button:hover{
+            background-color: black;
+            color: chocolate;
+            font-weight: 500;
+        }
+
+        @media screen and (max-width : 605px ) {
+
+            .container{
+            min-height: 200px;
+            min-width: 300px;
+            padding: 10px;
+            
+        }
+         button{
+            margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+    <h2>"Add or Remove text"</h2>
+    <input type="text" id="input" placeholder="    Text here">
+    <button onclick="add()">Add</button>
+    <button onclick="remove()">Remove</button>
+    <ul id="list">
+       
+    </ul>
+    </div>
+    <script>
+
+        let input = document.getElementById('input');
+        let list = document.getElementById('list');
+
+
+        function add() {
+
+            let newli = document.createElement('li');
+            list.appendChild(newli);
+            newli.innerText = input.value;
+
+        }
+
+    
+        function remove(){
+            list.removeChild(list.lastElementChild);
+        }
+       
+
+
+
+
+    </script>
+</body>
+
+</html>
