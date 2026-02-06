@@ -81,12 +81,13 @@
             let newli = document.createElement('li');
             list.appendChild(newli);
             newli.innerText = input.value;
-
+            input.value="";
         }
 
     
         function remove(){
             list.removeChild(list.lastElementChild);
+             input.value="";
         }
        
 
@@ -95,5 +96,6 @@
 
     </script>
 </body>
+
 
 </html>
